@@ -882,11 +882,11 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=tim3_adc\startup_stm32f407xx.d -otim3_adc\startup_stm32f407xx.o
- -I..\Inc -IE:\work\develop\Guangboji\cubeMX\TIM3_ADC-can-sync-8khz\MDK-ARM\RTE
- -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil
-\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__U
-VISION_VERSION SETA 517" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SE
-TA 1" --list=startup_stm32f407xx.lst startup_stm32f407xx.s
+ -I..\Inc -I..\\Inc -II:\embedded\stm32\stm32-speex-canbus\MDK-ARM\RTE -IC:\Kei
+l_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4x
+x_DFP\2.11.0 --predefine="__UVISION_VERSION SETA 514" --predefine="_RTE_ SETA 1
+" --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.lst startup_stm32
+f407xx.s
 
 
 
