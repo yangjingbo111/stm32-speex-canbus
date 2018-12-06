@@ -1,0 +1,77 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: y yangjb, g, LIC=HF8LQ-NEC8E-8V21H-WIUVI-W9ZM5-2TGTV
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.17
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.17
+Dialog DLL:      DCM.DLL V1.13.4.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
+Dialog DLL:      TCM.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+E:\work\develop\Guangboji\cubeMX\TIM3_ADC-can-sync-8khz\MDK-ARM\TIM3_ADC.uvprojx
+Project File Date:  11/26/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'TIM3_ADC'
+compiling freertos.c...
+../Inc/can.h(79): warning:  #1295-D: Deprecated declaration CAN1_USER_CONFIG - give arg types
+  uint8_t CAN1_USER_CONFIG();
+../Src/freertos.c(231): warning:  #177-D: variable "keyVal" was declared but never referenced
+  	uint8_t keyVal;
+../Src/freertos.c(232): warning:  #177-D: variable "src" was declared but never referenced
+  	uint8_t src[]="this is a string";
+../Src/freertos.c(233): warning:  #177-D: variable "dest" was declared but never referenced
+  	uint8_t dest[17];
+../Src/freertos.c(248): warning:  #550-D: variable "nbBits" was set but never used
+  	int nbBits = 0;
+../Src/freertos.c(356): warning:  #177-D: variable "src" was declared but never referenced
+  	uint8_t src[]="this is a string";
+../Src/freertos.c(357): warning:  #177-D: variable "dest" was declared but never referenced
+  	uint8_t dest[17];
+../Src/freertos.c(362): warning:  #177-D: variable "test_int16" was declared but never referenced
+  	int16_t test_int16[2] = {0x1122,0x3344};
+../Src/freertos.c(554): warning:  #177-D: variable "i" was declared but never referenced
+  	uint8_t i=0,j=0;
+../Src/freertos.c(554): warning:  #177-D: variable "j" was declared but never referenced
+  	uint8_t i=0,j=0;
+../Src/freertos.c(587): warning:  #550-D: variable "can_audio_step" was set but never used
+  	static uint8_t can_audio_step=0;
+../Src/freertos.c: 11 warnings, 0 errors
+linking...
+Program Size: Code=46630 RO-data=14626 RW-data=360 ZI-data=1219376  
+"TIM3_ADC\TIM3_ADC.axf" - 0 Error(s), 11 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+<h2>Collection of Component include folders:</h2>
+  E:\work\develop\Guangboji\cubeMX\TIM3_ADC-can-sync-8khz\MDK-ARM\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+Build Time Elapsed:  00:00:07
+</pre>
+</body>
+</html>
