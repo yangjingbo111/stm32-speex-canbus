@@ -272,12 +272,13 @@ void StartTaskSpeexEnc(void const * argument)
 			
 			//以下是解码程序，暂时不使用[本地播放]
 			//添加一级缓冲，为解码争取20ms【采样一帧时间决定】的处理时间。【不加缓冲的话只能和编码处在同一级20ms缓冲区中】
-//			if(dec_in_buffer_1_dec_busy){
-//				HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream2, (uint32_t)out_bytes, (uint32_t)dec_in_buffer_2, ENCODED_FRAME_SIZE);
-//			}
-//			else{
-//				HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream2, (uint32_t)out_bytes, (uint32_t)dec_in_buffer_1, ENCODED_FRAME_SIZE);
-//			}
+			// the following code can be used to test local enc-dec-play cycle when you uncomment.
+			if(dec_in_buffer_1_dec_busy){
+				HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream2, (uint32_t)out_bytes, (uint32_t)dec_in_buffer_2, ENCODED_FRAME_SIZE);
+			}
+			else{
+				HAL_DMA_Start_IT(&hdma_memtomem_dma2_stream2, (uint32_t)out_bytes, (uint32_t)dec_in_buffer_1, ENCODED_FRAME_SIZE);
+			}
 			
 		}    
 	}

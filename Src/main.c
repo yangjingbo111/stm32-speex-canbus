@@ -121,7 +121,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	int frame_size=0;
   /* USER CODE END 1 */
-
+	
   /* MCU Configuration----------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -256,7 +256,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-/* ADC DMA 传输完成一半回调函数 */
+/* ADC DMA half-complete callback */
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 {
   /* Prevent unused argument(s) compilation warning */
@@ -268,7 +268,7 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 	//xSemaphoreGiveFromISR(myBinarySemADCHalfCpltHandle, NULL);
 	uint32_t i;
 	int32_t tmp;
-	//12bitADC采用左对齐方式【16bit half word】
+	//12bitADC采用左对齐方式[16bit half word]
 	for(i=0;i<FRAME_SIZE;i++){
 		tmp = (buffer[i] - 0x800) * 0x7FFF / 0x800;
 		buffer[i] = (int16_t)tmp;
@@ -281,8 +281,8 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 	//HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, (uint32_t *)buffer, FRAME_SIZE, DAC_ALIGN_12B_R);
 }
 
-/* ADC DMA 传输结束回调函数 */
-/* 这里的ADC双缓冲是通过发送DMA传输一半信号和传输完成信号实现的*/
+/* ADC DMA complete callback */
+/* ADC double buffer is implemented by half-complete and full-complete DMA transmission signal */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
   /* Prevent unused argument(s) compilation warning */

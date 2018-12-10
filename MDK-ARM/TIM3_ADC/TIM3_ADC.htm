@@ -3,7 +3,7 @@
 <title>Static Call Graph - [TIM3_ADC\TIM3_ADC.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image TIM3_ADC\TIM3_ADC.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Dec 06 14:42:03 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Mon Dec 10 10:15:19 2018
 <BR><P>
 <H3>Maximum Stack Usage =        728 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -560,10 +560,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[12a]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteNoCheck
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteBlocking
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
+<BR><BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteNoCheck
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteBlocking
 </UL>
 
 <P><STRONG><a name="[9f]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
@@ -981,6 +981,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DAC_Start_DMA
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartTaskSpeexEnc
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartTaskCanRecvPreProcess
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvHalfCpltCallback
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
@@ -1427,10 +1428,10 @@ Global Symbols
 <P><STRONG><a name="[10c]"></a>MyWrapper</STRONG> (Thumb, 290 bytes, Stack size 32 bytes, queue.o(i.MyWrapper))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = MyWrapper &rArr; xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortValidateInterruptPriority
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 </UL>
@@ -1474,7 +1475,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[8b]"></a>StartTaskCanBusSend</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, freertos.o(i.StartTaskCanBusSend))
-<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = StartTaskCanBusSend &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = StartTaskCanBusSend &rArr; xQueueGenericReceive &rArr; prvUnlockQueue &rArr; xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
@@ -1483,7 +1484,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[8c]"></a>StartTaskCanRecvPreProcess</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, freertos.o(i.StartTaskCanRecvPreProcess))
-<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = StartTaskCanRecvPreProcess &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = StartTaskCanRecvPreProcess &rArr; xQueueGenericReceive &rArr; prvUnlockQueue &rArr; xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
@@ -1491,7 +1492,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[89]"></a>StartTaskSpeexDec</STRONG> (Thumb, 186 bytes, Stack size 8 bytes, freertos.o(i.StartTaskSpeexDec))
-<BR><BR>[Stack]<UL><LI>Max Depth = 512<LI>Call Chain = StartTaskSpeexDec &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 512<LI>Call Chain = StartTaskSpeexDec &rArr; xQueueGenericReceive &rArr; prvUnlockQueue &rArr; xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DAC_Start_DMA
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;speex_bits_read_from
@@ -1500,10 +1501,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[88]"></a>StartTaskSpeexEnc</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, freertos.o(i.StartTaskSpeexEnc))
+<P><STRONG><a name="[88]"></a>StartTaskSpeexEnc</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, freertos.o(i.StartTaskSpeexEnc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 512<LI>Call Chain = StartTaskSpeexEnc &rArr; xQueueGenericSend &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;speex_bits_write
+<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;speex_bits_write
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;speex_bits_reset
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;speex_encode_int
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
@@ -2074,8 +2076,8 @@ Global Symbols
 <P><STRONG><a name="[104]"></a>osSemaphoreCreate</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, cmsis_os.o(i.osSemaphoreCreate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = osSemaphoreCreate &rArr; xQueueGenericSend &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
 <BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 </UL>
@@ -2084,8 +2086,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 544 + Unknown Stack Size
 <LI>Call Chain = osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeFreeRtosPriority
+<BR>[Calls]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeFreeRtosPriority
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 </UL>
@@ -2140,15 +2142,15 @@ Global Symbols
 <P><STRONG><a name="[184]"></a>prvTraceGetCurrentTaskHandle</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, trckernelport.o(i.prvTraceGetCurrentTaskHandle))
 <BR><BR>[Calls]<UL><LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetCurrentTaskHandle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetRecorderEnabled
+<BR>[Called By]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
+<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetRecorderEnabled
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
 </UL>
 
 <P><STRONG><a name="[10e]"></a>prvTraceGetObjectNumberHigh16</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, trckernelport.o(i.prvTraceGetObjectNumberHigh16))
@@ -2156,9 +2158,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetQueueNumber
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyWrapper
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyWrapper
 </UL>
 
 <P><STRONG><a name="[18d]"></a>prvTraceGetQueueNumber</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, trckernelport.o(i.prvTraceGetQueueNumber))
@@ -2173,18 +2175,18 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxTaskGetTaskNumber
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Called By]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
+<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
+<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>
 
 <P><STRONG><a name="[171]"></a>prvTraceSaveObjectData</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, trcstreamingrecorder.o(i.prvTraceSaveObjectData))
@@ -2235,16 +2237,16 @@ Global Symbols
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceWarning
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<BR>[Called By]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[10f]"></a>prvTraceStoreEvent2</STRONG> (Thumb, 88 bytes, Stack size 32 bytes, trcstreamingrecorder.o(i.prvTraceStoreEvent2))
@@ -2254,16 +2256,16 @@ Global Symbols
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceWarning
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<BR>[Called By]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyWrapper
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[187]"></a>prvTraceStoreEvent3</STRONG> (Thumb, 92 bytes, Stack size 40 bytes, trcstreamingrecorder.o(i.prvTraceStoreEvent3))
@@ -2321,8 +2323,8 @@ Global Symbols
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
 <LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvHeapInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<BR>[Called By]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 
 <P><STRONG><a name="[1ad]"></a>pvTaskIncrementMutexHeldCount</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(i.pvTaskIncrementMutexHeldCount))
@@ -2540,13 +2542,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[16a]"></a>uxListRemove</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, list.o(i.uxListRemove))
-<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 
 <P><STRONG><a name="[18e]"></a>uxQueueGetQueueNumber</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, queue.o(i.uxQueueGetQueueNumber))
@@ -2575,37 +2577,37 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[16b]"></a>vListInsertEnd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, list.o(i.vListInsertEnd))
-<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<BR><BR>[Called By]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 
 <P><STRONG><a name="[16e]"></a>vPortEnterCritical</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, port.o(i.vPortEnterCritical))
-<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[176]"></a>vPortExitCritical</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, port.o(i.vPortExitCritical))
-<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[17e]"></a>vPortFree</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, heap_4.o(i.vPortFree))
@@ -2618,8 +2620,8 @@ Global Symbols
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 
 <P><STRONG><a name="[1a8]"></a>vPortSetupTimerInterrupt</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, port.o(i.vPortSetupTimerInterrupt))
@@ -2641,12 +2643,12 @@ Global Symbols
 <P><STRONG><a name="[162]"></a>vTaskDelay</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, tasks.o(i.vTaskDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<BR>[Calls]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
@@ -2668,12 +2670,12 @@ Global Symbols
 <P><STRONG><a name="[1a5]"></a>vTaskPriorityInherit</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, tasks.o(i.vTaskPriorityInherit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = vTaskPriorityInherit &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
 <BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
@@ -2683,28 +2685,28 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1ae]"></a>vTaskSetTimeOutState</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, tasks.o(i.vTaskSetTimeOutState))
-<BR><BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<BR><BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 </UL>
 
 <P><STRONG><a name="[163]"></a>vTaskStartScheduler</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, tasks.o(i.vTaskStartScheduler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 536 + Unknown Stack Size
 <LI>Call Chain = vTaskStartScheduler &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
+<BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelStart
 </UL>
 
 <P><STRONG><a name="[178]"></a>vTaskSuspendAll</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, tasks.o(i.vTaskSuspendAll))
-<BR><BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 </UL>
 
 <P><STRONG><a name="[9e]"></a>vTaskSwitchContext</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, tasks.o(i.vTaskSwitchContext))
@@ -2765,9 +2767,9 @@ Global Symbols
 <P><STRONG><a name="[1a6]"></a>xPortStartScheduler</STRONG> (Thumb, 208 bytes, Stack size 16 bytes, port.o(i.xPortStartScheduler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = xPortStartScheduler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___6_port_c_39a90d8d__prvEnableVFP
+<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSetupTimerInterrupt
+<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___6_port_c_39a90d8d__prvEnableVFP
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___6_port_c_39a90d8d__prvStartFirstTask
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSetupTimerInterrupt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
@@ -2783,28 +2785,19 @@ Global Symbols
 <P><STRONG><a name="[164]"></a>xQueueGenericCreate</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, queue.o(i.xQueueGenericCreate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 488<LI>Call Chain = xQueueGenericCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<BR>[Calls]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceSetObjectNumberHigh16
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 </UL>
 
 <P><STRONG><a name="[119]"></a>xQueueGenericReceive</STRONG> (Thumb, 794 bytes, Stack size 64 bytes, queue.o(i.xQueueGenericReceive))
-<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = xQueueGenericReceive &rArr; prvUnlockQueue &rArr; xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent3
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPriorityInherit
@@ -2815,6 +2808,15 @@ Global Symbols
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent3
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 </UL>
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartTaskSpeexEnc
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartTaskSpeexDec
@@ -2836,15 +2838,7 @@ Global Symbols
 <P><STRONG><a name="[11f]"></a>xQueueGenericSend</STRONG> (Thumb, 666 bytes, Stack size 64 bytes, queue.o(i.xQueueGenericSend))
 <BR><BR>[Stack]<UL><LI>Max Depth = 512<LI>Call Chain = xQueueGenericSend &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
@@ -2852,6 +2846,14 @@ Global Symbols
 <LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetObjectNumberHigh16
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartTaskSpeexEnc
@@ -2883,13 +2885,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 520 + Unknown Stack Size
 <LI>Call Chain = xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
+<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
-<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
 </UL>
 
 <P><STRONG><a name="[18c]"></a>xTaskGetCurrentTaskHandle</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetCurrentTaskHandle))
@@ -2905,11 +2907,11 @@ Global Symbols
 <P><STRONG><a name="[1ab]"></a>xTaskIncrementTick</STRONG> (Thumb, 246 bytes, Stack size 24 bytes, tasks.o(i.xTaskIncrementTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 </UL>
 <BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
@@ -2918,12 +2920,12 @@ Global Symbols
 <P><STRONG><a name="[17d]"></a>xTaskPriorityDisinherit</STRONG> (Thumb, 208 bytes, Stack size 24 bytes, tasks.o(i.xTaskPriorityDisinherit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = xTaskPriorityDisinherit &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
+<BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetCurrentTaskHandle
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 </UL>
@@ -2931,36 +2933,36 @@ Global Symbols
 <P><STRONG><a name="[110]"></a>xTaskRemoveFromEventList</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, tasks.o(i.xTaskRemoveFromEventList))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = xTaskRemoveFromEventList &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<BR>[Called By]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyWrapper
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
 <P><STRONG><a name="[179]"></a>xTaskResumeAll</STRONG> (Thumb, 208 bytes, Stack size 24 bytes, tasks.o(i.xTaskResumeAll))
 <BR><BR>[Stack]<UL><LI>Max Depth = 440<LI>Call Chain = xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 </UL>
 
 <P><STRONG><a name="[195]"></a>xTraceGetLastError</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, trcstreamingrecorder.o(i.xTraceGetLastError))
@@ -3390,24 +3392,24 @@ Local Symbols
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<BR>[Called By]<UL><LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
 <P><STRONG><a name="[16d]"></a>prvAddNewTaskToReadyList</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, tasks.o(i.prvAddNewTaskToReadyList))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = prvAddNewTaskToReadyList &rArr; prvTraceStoreEvent2 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreStringEvent
+<BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
+<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreStringEvent
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent2
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceStoreEvent1
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceSaveSymbol
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceSaveObjectData
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceSetTaskNumberHigh16
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTraceGetTaskNumberHigh16
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
-<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
@@ -3415,12 +3417,12 @@ Local Symbols
 <P><STRONG><a name="[177]"></a>prvCheckTasksWaitingTermination</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, tasks.o(i.prvCheckTasksWaitingTermination))
 <BR><BR>[Stack]<UL><LI>Max Depth = 480<LI>Call Chain = prvCheckTasksWaitingTermination &rArr; prvDeleteTCB &rArr; vPortFree &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; prvTraceStoreEvent1 &rArr; prvTraceError &rArr; prvSetRecorderEnabled &rArr; prvTraceStoreEvent &rArr;  prvTraceError (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 </UL>
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask
 </UL>
@@ -3452,8 +3454,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1b0]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, tasks.o(i.prvResetNextTaskUnblockTime))
-<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR><BR>[Called By]<UL><LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 
 <P><STRONG><a name="[165]"></a>makeFreeRtosPriority</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, cmsis_os.o(i.makeFreeRtosPriority))
